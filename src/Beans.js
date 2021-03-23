@@ -33,6 +33,7 @@ const products = [
 ]
 
 const CardBlock = styled.div `
+    flex-shrink: 0;
     position: relative;
     width: 390px;
     //border: 1px solid #dedede;

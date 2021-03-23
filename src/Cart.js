@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+import summarizer from './summarizer';
 
 
 const Cart = styled.div `
@@ -61,8 +62,7 @@ const Button = styled.div `
 
 export default () => {
     const cart = useSelector(state => state.cart);
-    //const { itemCount, cost } = useSelector(summarizser);
-    //const tax = useSelector(taxer);
+    const { itemCount, cost } = useSelector(summarizer);
     const dispatch = useDispatch();
 
     return (
@@ -80,8 +80,8 @@ export default () => {
                 </CartItemPricing>
             </CartItem>
             )}
-            {/* <p>{itemCount} items</p> */}
-            {/* <p>Total: ${cost.toFixed(2)}</p> */}
+            <p>{itemCount} items</p>
+            <p>Total: ${cost.toFixed(2)}</p>
             <Button onClick={() => dispatch({ type: 'clearBasket' })}>Clear</Button>
             </>
          : '카트가 비어 있어요' }
