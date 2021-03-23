@@ -82,7 +82,7 @@ export default () => {
             )}
             {/* <p>{itemCount} items</p> */}
             {/* <p>Total: ${cost.toFixed(2)}</p> */}
-            <Button>Clear</Button>
+            <Button onClick={() => dispatch({ type: 'clearBasket' })}>Clear</Button>
             </>
          : '카트가 비어 있어요' }
         </Cart>
